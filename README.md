@@ -1,38 +1,39 @@
-# Sistema de Controle de Atendimento - Laboratórios Médicos
+# 🏥 Sistema de Controle de Atendimento - Laboratórios Médicos
 
-## Descrição do Projeto
-Este projeto visa desenvolver um sistema de controle de atendimento em filas para laboratórios médicos, utilizando tecnologia de **totem de senhas**, **painel de atendimento** e **controle de guichês**.  
-Três tipos de agentes participam do fluxo:
-- **AS** – Agente Sistema: emite senhas e gerencia os comandos da atendente.
-- **AA** – Agente Atendente: chama a próxima senha para atendimento.
-- **AC** – Agente Cliente: emite a senha no totem e aguarda o chamado.
+## 📜 Descrição do Projeto
+Desenvolvimento de um sistema de controle de atendimento em filas para laboratórios médicos, utilizando **totem de senhas**, **painel de atendimento** e **controle de guichês**. 
 
-O atendimento é priorizado em três categorias de senha:
-- **SP** – Senha Prioritária
-- **SE** – Senha para Retirada de Exames
-- **SG** – Senha Geral
+### Agentes Envolvidos
+- **AS** – Agente Sistema: Emite senhas e gerencia comandos.
+- **AA** – Agente Atendente: Chama próximas senhas.
+- **AC** – Agente Cliente: Emite senha no totem e aguarda atendimento.
 
-O sistema também gera **relatórios diários e mensais** com informações detalhadas sobre os atendimentos.
+### Tipos de Senha
+- 🌟 **SP** – Prioritária
+- 📄 **SE** – Retirada de Exames
+- 💰 **SG** – Geral
 
-## Tecnologias Utilizadas
+### Destaques
+- Geração automática de senhas no formato `YYMMDD-PPSQ`
+- Atendimento com prioridades e regras específicas
+- Painel exibindo últimas 5 senhas chamadas
+- Controle de expediente das 07h00 às 17h00
+- Relatórios diários e mensais completos
+
+## 🛠️ Tecnologias Utilizadas
 - **Backend:** Node.js (Express)
 - **Banco de Dados:** MySQL 8.0
-- **Frontend:** Ionic Framework com Angular
+- **Frontend:** Ionic Framework + Angular
 
-## Funcionalidades
-- Emissão de senhas com numeração no formato `YYMMDD-PPSQ`.
-- Gestão de filas com regras específicas de prioridade e alternância de atendimento.
-- Painel de chamadas exibindo as últimas 5 senhas atendidas.
-- Controle do horário de expediente (07h00 às 17h00).
-- Tratamento de senhas não atendidas (5% descartadas).
-- Cálculo de tempo médio de atendimento com variações específicas por tipo de senha.
-- Emissão de relatórios diários e mensais:
-  - Quantitativo de senhas emitidas e atendidas (geral e por prioridade).
-  - Relatório detalhado de cada senha.
-  - Relatório de tempos médios de atendimento.
+## 🔄 Funcionalidades Principais
+- Emissão e controle de senhas por tipo
+- Alternância obrigatória entre senhas prioritárias e gerais
+- Registro de tempos médios de atendimento
+- Tratamento automático de senhas não atendidas
+- Geração de relatórios quantitativos e detalhados
 
-## Estrutura do Projeto
-```
+## 📁 Estrutura do Projeto
+```bash
 /backend
   /controllers
   /models
@@ -47,38 +48,36 @@ O sistema também gera **relatórios diários e mensais** com informações deta
     /components
 ```
 
-## Como Rodar o Projeto
+## 💻 Como Rodar o Projeto
 
 ### Backend
-1. Acesse a pasta `/backend`
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
-3. Configure o arquivo `.env` com as credenciais do banco MySQL.
-4. Inicie o servidor:
-   ```bash
-   npm run dev
-   ```
+```bash
+cd backend
+npm install
+# Configure o .env com as credenciais do MySQL
+npm run dev
+```
 
 ### Frontend
-1. Acesse a pasta `/frontend`
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
-3. Rode o app:
-   ```bash
-   ionic serve
-   ```
+```bash
+cd frontend
+npm install
+ionic serve
+```
 
-## Pré-requisitos
+## 📊 Pré-requisitos
 - Node.js >= 18.x
 - MySQL >= 8.0
-- Ionic CLI (`npm install -g @ionic/cli`)
-- Angular CLI (`npm install -g @angular/cli`)
+- Ionic CLI
+  ```bash
+  npm install -g @ionic/cli
+  ```
+- Angular CLI
+  ```bash
+  npm install -g @angular/cli
+  ```
 
-## Participantes
+## 👨‍💼 Participantes
 - Nome 1
 - Nome 2
 - Nome 3
@@ -86,8 +85,12 @@ O sistema também gera **relatórios diários e mensais** com informações deta
 
 *(Preencher com os nomes dos integrantes do projeto.)*
 
-## Observações
+## 💡 Observações Importantes
 - Todas as senhas devem ser descartadas ao final do expediente.
-- Senhas não atendidas devem ser marcadas como "não atendidas" no sistema.
-- Novas senhas podem influenciar na ordem de atendimento até o momento da chamada.
+- Senhas não atendidas devem ser registradas como "não atendidas".
+- O sistema deve lidar dinamicamente com novas senhas geradas antes da chamada.
+
+---
+
+> "Controle, Agilidade e Excelência no Atendimento!"
 
