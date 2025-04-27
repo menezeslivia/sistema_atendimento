@@ -1,99 +1,93 @@
-# 🏥 Sistema de Controle de Atendimento para Laboratórios Médicos
+# Sistema de Controle de Atendimento - Laboratórios Médicos
 
-![Ionic](https://img.shields.io/badge/Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+## Descrição do Projeto
+Este projeto visa desenvolver um sistema de controle de atendimento em filas para laboratórios médicos, utilizando tecnologia de **totem de senhas**, **painel de atendimento** e **controle de guichês**.  
+Três tipos de agentes participam do fluxo:
+- **AS** – Agente Sistema: emite senhas e gerencia os comandos da atendente.
+- **AA** – Agente Atendente: chama a próxima senha para atendimento.
+- **AC** – Agente Cliente: emite a senha no totem e aguarda o chamado.
 
-Sistema de gestão de filas com priorização para laboratórios médicos, desenvolvido em Ionic com backend Node.js e MySQL.
+O atendimento é priorizado em três categorias de senha:
+- **SP** – Senha Prioritária
+- **SE** – Senha para Retirada de Exames
+- **SG** – Senha Geral
 
-## 📌 Funcionalidades
+O sistema também gera **relatórios diários e mensais** com informações detalhadas sobre os atendimentos.
 
-- 🎫 Emissão de senhas com 3 tipos:
-  - **SP** (Prioritária - 15min ±5min)
-  - **SG** (Geral - 5min ±3min)  
-  - **SE** (Exames - <1min para 95% dos casos)
-- 📊 Priorização inteligente: `SP → SE|SG → SP → SE|SG`
-- 🖥️ Painel com últimas 5 senhas chamadas
-- 📅 Relatórios diários/mensais:
-  - Estatísticas de atendimento
-  - Tempos médios por tipo
-  - Detalhes completos por senha
-- ⏰ Horário comercial (7h-17h) com descarte automático
+## Tecnologias Utilizadas
+- **Backend:** Node.js (Express)
+- **Banco de Dados:** MySQL 8.0
+- **Frontend:** Ionic Framework com Angular
 
-## 🛠️ Tecnologias
+## Funcionalidades
+- Emissão de senhas com numeração no formato `YYMMDD-PPSQ`.
+- Gestão de filas com regras específicas de prioridade e alternância de atendimento.
+- Painel de chamadas exibindo as últimas 5 senhas atendidas.
+- Controle do horário de expediente (07h00 às 17h00).
+- Tratamento de senhas não atendidas (5% descartadas).
+- Cálculo de tempo médio de atendimento com variações específicas por tipo de senha.
+- Emissão de relatórios diários e mensais:
+  - Quantitativo de senhas emitidas e atendidas (geral e por prioridade).
+  - Relatório detalhado de cada senha.
+  - Relatório de tempos médios de atendimento.
 
-| Área         | Tecnologia           |
-|--------------|----------------------|
-| Frontend     | Ionic + Angular      |
-| Backend      | Node.js + Express    |
-| Banco        | MySQL 8.0            |
-| Autenticação | JWT                  |
+## Estrutura do Projeto
+```
+/backend
+  /controllers
+  /models
+  /routes
+  /services
+  /utils
+/frontend
+  /src
+    /app
+    /pages
+    /services
+    /components
+```
 
-## 🚀 Como Executar
+## Como Rodar o Projeto
 
-```bash
-# 1. Clone o repositório
-git clone https://github.com/seu-usuario/sistema-atendimento.git
-cd sistema-atendimento
+### Backend
+1. Acesse a pasta `/backend`
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Configure o arquivo `.env` com as credenciais do banco MySQL.
+4. Inicie o servidor:
+   ```bash
+   npm run dev
+   ```
 
-# 2. Instale as dependências
-npm install
-cd backend && npm install && cd ..
+### Frontend
+1. Acesse a pasta `/frontend`
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Rode o app:
+   ```bash
+   ionic serve
+   ```
 
-# 3. Configure o .env
-cp .env.example .env
-# Edite com suas credenciais do MySQL
+## Pré-requisitos
+- Node.js >= 18.x
+- MySQL >= 8.0
+- Ionic CLI (`npm install -g @ionic/cli`)
+- Angular CLI (`npm install -g @angular/cli`)
 
-# 4. Inicie os serviços
-npm run start:backend   # Inicia o servidor Node
-npm start               # Inicia o app Ionic
+## Participantes
+- Nome 1
+- Nome 2
+- Nome 3
+- Nome 4
 
-📂 Estrutura do Projeto
-sistema-atendimento/
-├── src/                   # App Ionic
-│   ├── app/               # Componentes principais
-│   ├── pages/             # Telas do sistema
-│   │   ├── atendente/     # Interface AA
-│   │   ├── cliente/       # Interface AC  
-│   │   └── painel/        # Display público
-│   └── services/          # Lógica de negócios
-├── backend/               # API Node.js
-│   ├── controllers/       # Regras de atendimento
-│   ├── models/            # Entidades do banco
-│   └── routes/            # Endpoints API
-└── database/              # Migrations e seeds
-👥 Agentes do Sistema
-Sigla	Função
-AS	Sistema (emissão de senhas)
-AA	Atendente (guichês)
-AC	Cliente (totem de senhas)
-📝 Relatórios Gerados
-Quantitativos:
+*(Preencher com os nomes dos integrantes do projeto.)*
 
-Senhas emitidas/atendidas
+## Observações
+- Todas as senhas devem ser descartadas ao final do expediente.
+- Senhas não atendidas devem ser marcadas como "não atendidas" no sistema.
+- Novas senhas podem influenciar na ordem de atendimento até o momento da chamada.
 
-Distribuição por tipo
-
-Detalhado:
-
-Número da senha (formato YYMMDD-PPSQ)
-
-Horários de emissão/atendimento
-
-Guichê responsável
-
-TM (Tempo Médio):
-
-Variações por tipo de senha
-
-🤝 Contribuidores
-[Seu Nome] - Product Owner
-
-[Colega 1] - Frontend
-
-[Colega 2] - Backend
-
-[Colega 3] - Banco de Dados
-
-📄 Licença
-MIT License - Consulte o arquivo LICENSE para detalhes.
