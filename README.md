@@ -28,13 +28,13 @@ Este repositório contém o código-fonte de um _app_ híbrido (Ionic + Angular)
 ## 🎨 Telas do Aplicativo
 
 ### 1. Totem de Emissão de Senhas
-<img src=".github/screenshots/totem.png" alt="Totem de Emissão" width="300" />
+<img src="sistema-de-atendimento/.github/screenshots/totem.png" alt="Totem de Emissão" width="300" />
 
 ### 2. Guichê de Atendimento
-<img src=".github/screenshots/guiche.png" alt="Guichê de Atendimento" width="300" />
+<img src="sistema-de-atendimento/.github/screenshots/guiche.png" alt="Guichê de Atendimento" width="300" />
 
 ### 3. Painel de Chamadas
-<img src=".github/screenshots/painel.png" alt="Painel de Chamadas" width="300" />
+<img src="sistema-de-atendimento/.github/screenshots/painel.png" alt="Painel de Chamadas" width="300" />
 
 ---
 
