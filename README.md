@@ -1,96 +1,81 @@
-# 🏥 Sistema de Controle de Atendimento - Laboratórios Médicos
+# tickets
 
-## 📜 Descrição do Projeto
-Desenvolvimento de um sistema de controle de atendimento em filas para laboratórios médicos, utilizando **totem de senhas**, **painel de atendimento** e **controle de guichês**. 
+**Aplicativo Móvel de Controle de Senhas para Laboratórios Médicos**
 
-### Agentes Envolvidos
-- **AS** – Agente Sistema: Emite senhas e gerencia comandos.
-- **AA** – Agente Atendente: Chama próximas senhas.
-- **AC** – Agente Cliente: Emite senha no totem e aguarda atendimento.
-
-### Tipos de Senha
-- 🌟 **SP** – Prioritária
-- 📄 **SE** – Retirada de Exames
-- 💰 **SG** – Geral
-
-### Destaques
-- Geração automática de senhas no formato `YYMMDD-PPSQ`
-- Atendimento com prioridades e regras específicas
-- Painel exibindo últimas 5 senhas chamadas
-- Controle de expediente das 07h00 às 17h00
-- Relatórios diários e mensais completos
-
-## 🛠️ Tecnologias Utilizadas
-- **Backend:** Node.js (Express)
-- **Banco de Dados:** MySQL 8.0
-- **Frontend:** Ionic Framework + Angular
-
-## 🔄 Funcionalidades Principais
-- Emissão e controle de senhas por tipo
-- Alternância obrigatória entre senhas prioritárias e gerais
-- Registro de tempos médios de atendimento
-- Tratamento automático de senhas não atendidas
-- Geração de relatórios quantitativos e detalhados
-
-## 📁 Estrutura do Projeto
-```bash
-/backend
-  /controllers
-  /models
-  /routes
-  /services
-  /utils
-/frontend
-  /src
-    /app
-    /pages
-    /services
-    /components
-```
-
-## 💻 Como Rodar o Projeto
-
-### Backend
-```bash
-cd backend
-npm install
-# Configure o .env com as credenciais do MySQL
-npm run dev
-```
-
-### Frontend
-```bash
-cd frontend
-npm install
-ionic serve
-```
-
-## 📊 Pré-requisitos
-- Node.js >= 18.x
-- MySQL >= 8.0
-- Ionic CLI
-  ```bash
-  npm install -g @ionic/cli
-  ```
-- Angular CLI
-  ```bash
-  npm install -g @angular/cli
-  ```
-
-## 👨‍💼 Participantes
-- Nome 1
-- Nome 2
-- Nome 3
-- Nome 4
-
-*(Preencher com os nomes dos integrantes do projeto.)*
-
-## 💡 Observações Importantes
-- Todas as senhas devem ser descartadas ao final do expediente.
-- Senhas não atendidas devem ser registradas como "não atendidas".
-- O sistema deve lidar dinamicamente com novas senhas geradas antes da chamada.
+Este repositório contém o código-fonte de um _app_ híbrido (Ionic + Angular) para controle de atendimento em filas de laboratórios médicos, desenvolvido como trabalho de disciplina.
 
 ---
 
-> "Controle, Agilidade e Excelência no Atendimento!"
+## 📱 Sobre o Projeto
+
+- **Plataforma:** Mobile (Ionic Framework + Angular)
+- **Escopo:** Frontend standalone (não há integração com backend ou banco de dados; toda informação é gerenciada em LocalStorage)
+- **Agentes:**  
+  - AS (Agente Sistema) — Emite senhas via totens  
+  - AA (Agente Atendente) — Chama próximas senhas no guichê  
+  - AC (Agente Cliente) — Recebe senha e aguarda no painel  
+
+### Principais Funcionalidades
+
+1. Totem de Senhas (SP, SE, SG)
+2. Chamada de Senhas no Guichê (priorização automática)
+3. Painel de Chamadas (exibe últimas 5 senhas)
+4. Relatórios (visão diária e mensal)
+5. Persistência local via LocalStorage (sem backend)
+
+---
+
+## 🎨 Telas do Aplicativo
+
+### 1. Totem de Emissão de Senhas
+<img src=".github/screenshots/totem.png" alt="Totem de Emissão" width="300" />
+
+### 2. Guichê de Atendimento
+<img src=".github/screenshots/guiche.png" alt="Guichê de Atendimento" width="300" />
+
+### 3. Painel de Chamadas
+<img src=".github/screenshots/painel.png" alt="Painel de Chamadas" width="300" />
+
+---
+
+## ⚙️ Requisitos para Rodar o Projeto
+
+- Node.js (versão >= 18.x)  
+- Ionic CLI (>= 6.x)  
+- Angular CLI (>= 15.x)  
+
+### Passos
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/<seu-usuario>/tickets.git
+   cd tickets
+   ```
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Inicie o app em modo de desenvolvimento:
+   ```bash
+   ionic serve
+   ```
+4. Acesse no seu navegador ou emulador via: `http://localhost:8100`
+
+---
+
+## 👨‍💻 Submissão Individual
+
+- Embora o projeto possa ser desenvolvido em grupo, cada aluno deve realizar a própria **submissão individual**.
+- Este repositório é público e atende ao requisito de entrega de nota.
+
+---
+
+## 📄 Licença
+
+Este trabalho está licenciado sob a licença **Creative Commons – Atribuição 4.0 Internacional (CC BY 4.0)**.  
+Consulte o arquivo [LICENSE](LICENSE) para detalhes.
+
+---
+
+> Desenvolvido como parte da disciplina de Sistemas de Informação – Trabalho Individual
 
