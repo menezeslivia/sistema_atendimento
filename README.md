@@ -65,8 +65,7 @@ Este repositório contém o código-fonte de um _app_ híbrido (Ionic + Angular)
 
 ## 👨‍💻 Submissão Individual
 
-- Embora o projeto possa ser desenvolvido em grupo, cada aluno deve realizar a própria **submissão individual**.
-- Este repositório é público e atende ao requisito de entrega de nota.
+- Aluno Responsavel: Livia Janine Menezes Cabral da Silva
 
 ---
 
