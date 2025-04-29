@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Atendimento - Guichê</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Fila de Atendimento</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngIf="senhas.length > 0">
+        <ion-item *ngFor="let senha of senhas">
+          <ion-label>
+            <h2>{{ senha.codigo }}</h2>
+            <p>Tipo: {{ senha.tipo }} | Emitido: {{ senha.dataEmissao | date:'shortTime' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <p *ngIf="senhas.length === 0" class="ion-text-center">Nenhuma senha chamada ainda.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="ion-padding">
+    <ion-button expand="block" color="primary" (click)="chamarProximaSenha()">
+      Chamar Próxima Senha
+    </ion-button>
+    <ion-button 
+      *ngIf="senhas.length > 0" 
+      expand="block" 
+      color="secondary" 
+      (click)="atenderSenha()">
+      Atender Senha
+    </ion-button>
+  </div>
+</ion-content>

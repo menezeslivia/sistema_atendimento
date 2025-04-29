@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Totem de Atendimento</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center ion-margin-bottom">
+        <ion-col size="12" sizeMd="8" sizeLg="6">
+          <ion-button expand="block" color="danger" (click)="emitirSenha('SP')">Emitir Senha Prioritária (SP)</ion-button>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="ion-justify-content-center ion-margin-bottom">
+        <ion-col size="12" sizeMd="8" sizeLg="6">
+          <ion-button expand="block" color="primary" (click)="emitirSenha('SG')">Emitir Senha Geral (SG)</ion-button>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeMd="8" sizeLg="6">
+          <ion-button expand="block" color="tertiary" (click)="emitirSenha('SE')">Emitir Senha de Exames (SE)</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  

@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="primary"><ion-title>Painel</ion-title></ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <h3>Últimas 5 Senhas</h3>
+  <ion-list *ngIf="ultimosChamados.length>0">
+    <ion-item *ngFor="let t of ultimosChamados">
+      <ion-label>
+        <h2>{{t.codigo}}</h2>
+        <p>Guichê: {{t.guicheAtendimento}} | {{t.tipo}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <p *ngIf="ultimosChamados.length===0" class="ion-text-center">Nenhuma chamada ainda</p>
+</ion-content>

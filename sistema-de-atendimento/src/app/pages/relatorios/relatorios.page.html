@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Relatórios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form">
+    <ion-segment formControlName="mode">
+      <ion-segment-button value="daily">Diário</ion-segment-button>
+      <ion-segment-button value="monthly">Mensal</ion-segment-button>
+    </ion-segment>
+
+    <div *ngIf="form.get('mode')?.value === 'daily'" class="ion-padding">
+      <ion-item>
+        <ion-label>Data</ion-label>
+        <ion-input type="date" formControlName="date"></ion-input>
+      </ion-item>
+    </div>
+    <div *ngIf="form.get('mode')?.value === 'monthly'" class="ion-padding">
+      <ion-item>
+        <ion-label>Mês</ion-label>
+        <ion-input type="month" formControlName="month"></ion-input>
+      </ion-item>
+    </div>
+  </form>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Resumo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Total Emitidas: {{ totalEmitidas }}</p>
+      <p>Total Atendidas: {{ totalAtendidas }}</p>
+      <ion-grid>
+        <ion-row>
+          <ion-col>Tipo</ion-col>
+          <ion-col>Emitidas</ion-col>
+          <ion-col>Atendidas</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let tipo of tipos">
+          <ion-col>{{ tipo }}</ion-col>
+          <ion-col>{{ emitidasPorTipo[tipo] }}</ion-col>
+          <ion-col>{{ atendidasPorTipo[tipo] }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detalhado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let t of filtered">
+          <ion-label>
+            <h3>{{ t.codigo }}</h3>
+            <p>Tipo: {{ t.tipo }} | Emitido: {{ t.dataEmissao | date:'short' }}</p>
+            <p *ngIf="t.dataAtendimento">Atendido: {{ t.dataAtendimento | date:'short' }} | Guichê: {{ t.guicheAtendimento }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
