@@ -1,96 +1,77 @@
-# 🏥 Sistema de Controle de Atendimento - Laboratórios Médicos
+tickets
 
-## 📜 Descrição do Projeto
-Desenvolvimento de um sistema de controle de atendimento em filas para laboratórios médicos, utilizando **totem de senhas**, **painel de atendimento** e **controle de guichês**. 
+Aplicativo Móvel de Controle de Senhas para Laboratórios Médicos
 
-### Agentes Envolvidos
-- **AS** – Agente Sistema: Emite senhas e gerencia comandos.
-- **AA** – Agente Atendente: Chama próximas senhas.
-- **AC** – Agente Cliente: Emite senha no totem e aguarda atendimento.
+Este repositório contém o código-fonte de um app híbrido (Ionic + Angular) para controle de atendimento em filas de laboratórios médicos, desenvolvido como trabalho de disciplina.
 
-### Tipos de Senha
-- 🌟 **SP** – Prioritária
-- 📄 **SE** – Retirada de Exames
-- 💰 **SG** – Geral
+📱 Sobre o Projeto
 
-### Destaques
-- Geração automática de senhas no formato `YYMMDD-PPSQ`
-- Atendimento com prioridades e regras específicas
-- Painel exibindo últimas 5 senhas chamadas
-- Controle de expediente das 07h00 às 17h00
-- Relatórios diários e mensais completos
+Plataforma: Mobile (Ionic Framework + Angular)
 
-## 🛠️ Tecnologias Utilizadas
-- **Backend:** Node.js (Express)
-- **Banco de Dados:** MySQL 8.0
-- **Frontend:** Ionic Framework + Angular
+Escopo: Frontend standalone (não há integração com backend ou banco de dados; toda informação é gerenciada em LocalStorage)
 
-## 🔄 Funcionalidades Principais
-- Emissão e controle de senhas por tipo
-- Alternância obrigatória entre senhas prioritárias e gerais
-- Registro de tempos médios de atendimento
-- Tratamento automático de senhas não atendidas
-- Geração de relatórios quantitativos e detalhados
+Agentes:
 
-## 📁 Estrutura do Projeto
-```bash
-/backend
-  /controllers
-  /models
-  /routes
-  /services
-  /utils
-/frontend
-  /src
-    /app
-    /pages
-    /services
-    /components
-```
+AS (Agente Sistema) — Emite senhas via totens
 
-## 💻 Como Rodar o Projeto
+AA (Agente Atendente) — Chama próximas senhas no guichê
 
-### Backend
-```bash
-cd backend
+AC (Agente Cliente) — Recebe senha e aguarda no painel
+
+Principais Funcionalidades
+
+Totem de Senhas (SP, SE, SG)
+
+Chamada de Senhas no Guichê (priorização automática)
+
+Painel de Chamadas (exibe últimas 5 senhas)
+
+Relatórios (visão diária e mensal)
+
+Persistência local via LocalStorage (sem backend)
+
+🎨 Telas do Aplicativo
+
+1. Totem de Emissão de Senhas
+
+2. Guichê de Atendimento
+
+3. Painel de Chamadas
+
+⚙️ Requisitos para Rodar o Projeto
+
+Node.js (versão >= 18.x)
+
+Ionic CLI (>= 6.x)
+
+Angular CLI (>= 15.x)
+
+Passos
+
+Clone o repositório:
+
+git clone https://github.com/<seu-usuario>/tickets.git
+cd tickets
+
+Instale as dependências:
+
 npm install
-# Configure o .env com as credenciais do MySQL
-npm run dev
-```
 
-### Frontend
-```bash
-cd frontend
-npm install
+Inicie o app em modo de desenvolvimento:
+
 ionic serve
-```
 
-## 📊 Pré-requisitos
-- Node.js >= 18.x
-- MySQL >= 8.0
-- Ionic CLI
-  ```bash
-  npm install -g @ionic/cli
-  ```
-- Angular CLI
-  ```bash
-  npm install -g @angular/cli
-  ```
+Acesse no seu navegador ou emulador via: http://localhost:8100
 
-## 👨‍💼 Participantes
-- Nome 1
-- Nome 2
-- Nome 3
-- Nome 4
+👨‍💻 Submissão Individual
 
-*(Preencher com os nomes dos integrantes do projeto.)*
+Embora o projeto possa ser desenvolvido em grupo, cada aluno deve realizar a própria submissão individual.
 
-## 💡 Observações Importantes
-- Todas as senhas devem ser descartadas ao final do expediente.
-- Senhas não atendidas devem ser registradas como "não atendidas".
-- O sistema deve lidar dinamicamente com novas senhas geradas antes da chamada.
+Este repositório é público e atende ao requisito de entrega de nota.
 
----
+📄 Licença
 
-> "Controle, Agilidade e Excelência no Atendimento!"
+Este trabalho está licenciado sob a licença Creative Commons – Atribuição 4.0 Internacional (CC BY 4.0).Consulte o arquivo LICENSE para detalhes.
+
+Desenvolvido como parte da disciplina de Sistemas de Informação – Trabalho Individual
 
