@@ -73,7 +73,7 @@ Este repositório contém o código-fonte de um _app_ híbrido (Ionic + Angular)
 ## 📄 Licença
 
 Este trabalho está licenciado sob a licença **Creative Commons – Atribuição 4.0 Internacional (CC BY 4.0)**.  
-Consulte o arquivo [LICENSE](LICENSE) para detalhes.
+Consulte o arquivo [LICENSE](LICENSE.md) para detalhes.
 
 ---
 
