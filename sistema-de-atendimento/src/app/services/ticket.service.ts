@@ -1,4 +1,3 @@
-// src/app/services/ticket.service.ts
 import { Injectable } from '@angular/core';
 import { StorageService } from './storage.service';
 import { Ticket, TipoSenha } from '../models/ticket.model';
@@ -23,7 +22,6 @@ export class TicketService {
       .forEach(t => this.sequencias[t.tipo]++);
   }
 
-  /** lê e reconstrói Dates */
   getAllTickets(): Ticket[] {
     const raw = this.storage.getItem<any[]>(this.STORAGE_KEY) || [];
     return raw.map(r => ({
