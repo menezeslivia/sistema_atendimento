@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { TicketService } from './ticket.service';
 import { Ticket } from '../models/ticket.model';
 import { TipoSenha, StatusTicket } from '../models/enums';
-import { randomizeTempoAtendimento } from '../utils/random.utils'; // Vamos criar já já.
+import { randomizeTempoAtendimento } from '../utils/random.utils';
 
 @Injectable({
   providedIn: 'root',
